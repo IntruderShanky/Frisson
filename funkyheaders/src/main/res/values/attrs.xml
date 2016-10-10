@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <attr name="src" format="reference" />
+    <attr name="scaleType">
+        <enum name="centerCrop" value="0" />
+        <enum name="fitXY" value="1" />
+    </attr>
+    <attr name="tint" format="color" />
+
     <declare-styleable name="FunkyHeader">
-        <attr name="src" format="reference" />
-        <attr name="scaleType">
-            <enum name="centerCrop" value="0" />
-            <enum name="fitXY" value="1" />
-        </attr>
-        <attr name="tint" format="color" />
+        <attr name="src" />
+        <attr name="scaleType" />
+        <attr name="tint" />
     </declare-styleable>
 </resources>
