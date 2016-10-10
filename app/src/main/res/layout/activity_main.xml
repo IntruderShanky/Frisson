@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:funky="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context="com.intrusoft.funkyheader.app.MainActivity">
+
+    <com.intrusoft.library.FunkyHeader
+        android:id="@+id/wave_head"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        funky:scaleType="centerCrop"
+        funky:src="@drawable/intruder_shanky"
+        funky:tint="#88880E4F" />
+
+    <View
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/ic_navigation" />
+
+    <View
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/ic_edit" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="120dp"
+        funky:cardCornerRadius="50dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/intruder_shanky" />
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/image"
+        android:layout_marginLeft="28dp"
+        android:layout_toRightOf="@+id/image"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Intruder Shanky"
+        android:textColor="#ccffffff"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="4dp"
+        android:layout_toRightOf="@+id/image"
+        android:text="UI/UX Designer | Android Developer"
+        android:textColor="#aaffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/about"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/image"
+        android:background="@drawable/border"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="FOLLOW ME"
+        android:textColor="#ccffffff" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/wave_head"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="9096"
+                    android:textColor="#880E4F"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="Followers"
+                    android:textColor="#cc424242" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#aa424242" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textColor="#880E4F"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="Following"
+                    android:textColor="#cc424242" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#aa424242" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="1782"
+                    android:textColor="#880E4F"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="Collections"
+                    android:textColor="#cc424242" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="26dp"
+            android:drawableLeft="@drawable/ic_mail"
+            android:drawablePadding="24dp"
+            android:gravity="center"
+            android:text="intrudershanky@outlook.com"
+            android:textColor="#880E4F" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="26dp"
+            android:drawableLeft="@drawable/ic_public"
+            android:drawablePadding="24dp"
+            android:gravity="center"
+            android:text="intrudershanky.github.io"
+            android:textColor="#880E4F" />
+    </LinearLayout>
+</RelativeLayout>
