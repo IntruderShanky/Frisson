@@ -11,7 +11,7 @@
     <com.intrusoft.library.FunkyHeader
         android:id="@+id/wave_head"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="300dp"
         funky:scaleType="centerCrop"
         funky:src="@drawable/intruder_shanky"
         funky:tint="#88880E4F" />

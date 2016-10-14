@@ -144,9 +144,9 @@ public class FunkyHeader extends View {
     @Override
     protected void onDraw(final Canvas canvas) {
         super.onDraw(canvas);
-        path = getWavePath(width, height, width / 100 * 10, 0, 3);
+        path = getWavePath(width, height, 80, 0, 3);
         canvas.drawPath(path, paint);
-        path = getWavePath(width, height, width / 100 * 12, 60, 4);
+        path = getWavePath(width, height, 110, 60, 4);
         viewBounds.set(0, 0, width, height);
         canvas.clipPath(path);
         if (bitmap != null)
@@ -159,7 +159,7 @@ public class FunkyHeader extends View {
             }
         canvas.clipRect(viewBounds, Region.Op.UNION);
         canvas.drawPath(path, paint);
-        path = getWavePath(width, height, width / 100 * 13, 20, 3);
+        path = getWavePath(width, height, 110, 20, 3);
         canvas.drawPath(path, paint);
     }
 
