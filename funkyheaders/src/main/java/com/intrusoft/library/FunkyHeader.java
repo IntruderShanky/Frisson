@@ -116,28 +116,19 @@ public class FunkyHeader extends View {
         height = getMeasuredHeight();
         Log.d("T", width + "");
         if (bitmap != null && scaleType == ScaleType.CENTRE_CROP) {
-            float ratioChange;
-            if (width - bitmap.getWidth() < height - bitmap.getHeight())
+            float ratioChange = 1;
+            if (width != bitmap.getWidth()) {
+                ratioChange = width / bitmap.getWidth();
+            }
+            if (ratioChange * bitmap.getHeight() < height) {
                 ratioChange = height / bitmap.getHeight();
-            else ratioChange = width / requiredWidth;
+            }
             requiredHeight = bitmap.getHeight() * ratioChange;
             requiredWidth = bitmap.getWidth() * ratioChange;
-            if (requiredWidth < width) {
-                ratioChange = width / requiredWidth;
-                requiredWidth *= ratioChange;
-                requiredHeight *= ratioChange;
-            }
-            if (requiredHeight < height) {
-                ratioChange = height / requiredHeight;
-                requiredHeight *= ratioChange;
-                requiredWidth *= ratioChange;
-            }
-
             y = (int) ((requiredHeight / 2) - (height / 2));
             x = (int) ((requiredWidth / 2) - (width / 2));
             if (x > 0) x = -x;
             if (y > 0) y = -y;
-            bitmap = Bitmap.createScaledBitmap(bitmap, (int) requiredWidth, (int) requiredHeight, true);
         }
     }
 

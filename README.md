@@ -1,6 +1,8 @@
 # FunkyHeader
 Provide Funky cuts on image (The Perfect Header for Profile UI) 
 
+[![API](https://img.shields.io/badge/API-9%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=9)  [![](https://jitpack.io/v/IntruderShanky/FunkyHeader.svg)](https://jitpack.io/#IntruderShanky/FunkyHeader)
+
 # Preview
 ![Screenshot](screenshot.png)
 
@@ -17,7 +19,7 @@ allprojects {
 Step 2. Add the dependency
 ```groovy
 dependencies {
-  compile 'com.github.IntruderShanky:FunkyHeader:1.1.1'
+  compile 'com.github.IntruderShanky:FunkyHeader:1.2.1'
  }
  ```
 # Implementation
