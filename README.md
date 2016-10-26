@@ -3,6 +3,10 @@ Provide Funky cuts on image (The Perfect Header for Profile UI)
 
 [![API](https://img.shields.io/badge/API-9%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=9)  [![](https://jitpack.io/v/IntruderShanky/FunkyHeader.svg)](https://jitpack.io/#IntruderShanky/FunkyHeader)
 
+[Demo App - IS Library](https://play.google.com/store/apps/details?id=com.intrusoft.islibrarydemo)
+
+<a href='https://play.google.com/store/apps/details?id=com.intrusoft.islibrarydemo&utm_source=global_co&utm_small=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="193" height="75"/></a>
+
 # Preview
 ![Screenshot](screenshot.png)
 
