@@ -12,8 +12,8 @@
         android:id="@+id/wave_head"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        funky:scaleType="centerCrop"
-        funky:src="@drawable/intruder_shanky"
+        android:scaleType="centerCrop"
+        android:src="@drawable/intruder_shanky"
         funky:tint="#88880E4F" />
 
     <View
