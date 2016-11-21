@@ -23,7 +23,7 @@ allprojects {
 Step 2. Add the dependency
 ```groovy
 dependencies {
-  compile 'com.github.IntruderShanky:FunkyHeader:1.2.1'
+  compile 'com.github.IntruderShanky:Frisson:1.2.1'
  }
  ```
 # Implementation
