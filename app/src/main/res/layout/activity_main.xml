@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:funky="http://schemas.android.com/apk/res-auto"
+    xmlns:frisson="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -13,12 +13,12 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:scaleType="centerCrop"
-        funky:tideCount="3"
-        funky:src="@drawable/intruder_shanky"
-        funky:tintColor="#880E4F"
-        funky:tideHeight="50dp"
-        funky:alphaValue="70"
-        funky:autoTint="true"/>
+        frisson:tideCount="3"
+        frisson:src="@drawable/intruder_shanky"
+        frisson:tintColor="#880E4F"
+        frisson:tideHeight="50dp"
+        frisson:alphaValue="70"
+        frisson:autoTint="true"/>
 
     <View
         android:layout_width="28dp"
@@ -41,7 +41,7 @@
         android:layout_height="100dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="120dp"
-        funky:cardCornerRadius="50dp">
+        frisson:cardCornerRadius="50dp">
 
         <ImageView
             android:layout_width="match_parent"
