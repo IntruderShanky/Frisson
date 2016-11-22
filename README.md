@@ -61,6 +61,14 @@ frisson:alphaValue="value"
 ```xml
 frisson:autoTint="true"
 ```
+####Tide Height (Height of waves)
+```xml
+frisson:tideHeight="50dp"
+```
+####Tide Count (No. of Tides)
+```xml
+frisson:tideCount="true"
+```
 ![Screenshot](graphic/screenshot.png)
 
 ###Java Implementation:
