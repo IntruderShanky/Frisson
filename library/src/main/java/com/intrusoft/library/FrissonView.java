@@ -162,7 +162,7 @@ public class FrissonView extends View {
     @Override
     protected void onDraw(final Canvas canvas) {
         super.onDraw(canvas);
-        int l = tideCount/2;
+        int l = tideCount / 2;
         path = Utils.getWavePath(width, height, tideHeight, l * 20, 4);
         viewBounds.set(0, 0, width, height);
         canvas.clipPath(path);
@@ -182,7 +182,7 @@ public class FrissonView extends View {
         paint.setAlpha(alphaValue);
         canvas.clipRect(viewBounds, Region.Op.UNION);
         for (int i = 1; i <= tideCount; i++) {
-            path = Utils.getWavePath(width, height, tideHeight, i*i * 20, 3);
+            path = Utils.getWavePath(width, height, tideHeight, i * i * 20, 3);
             canvas.drawPath(path, paint);
         }
     }

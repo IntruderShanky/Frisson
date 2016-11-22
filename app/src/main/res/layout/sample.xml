@@ -91,8 +91,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text"
-        android:gravity="center"
         android:layout_marginTop="20dp"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <android.support.v7.widget.CardView
