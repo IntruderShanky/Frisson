@@ -14,9 +14,10 @@
         android:layout_height="300dp"
         android:scaleType="centerCrop"
         funky:tideCount="3"
+        funky:src="@drawable/intruder_shanky"
         funky:tintColor="#880E4F"
-        funky:tideHeight="10dp"
-        funky:alphaValue="160"
+        funky:tideHeight="50dp"
+        funky:alphaValue="70"
         funky:autoTint="true"/>
 
     <View
