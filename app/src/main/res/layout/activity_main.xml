@@ -8,13 +8,16 @@
     android:background="#fff"
     tools:context="com.intrusoft.funkyheader.app.MainActivity">
 
-    <com.intrusoft.library.FunkyHeader
+    <com.intrusoft.library.FrissonView
         android:id="@+id/wave_head"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        funky:scaleType="centerCrop"
-        funky:src="@drawable/intruder_shanky"
-        funky:tint="#88880E4F" />
+        android:scaleType="centerCrop"
+        funky:tideCount="3"
+        funky:tintColor="#880E4F"
+        funky:tideHeight="10dp"
+        funky:alphaValue="160"
+        funky:autoTint="true"/>
 
     <View
         android:layout_width="28dp"

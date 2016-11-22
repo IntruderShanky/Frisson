@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Image Resource-->
+    <attr name="src" format="reference" />
+
+    <!--Scale Type of Image-->
+    <attr name="scaleType">
+        <enum name="centerCrop" value="0" />
+        <enum name="fitXY" value="1" />
+    </attr>
+
+    <!--Tint Color-->
+    <attr name="tintColor" format="color" />
+
+    <!--No. of waves to be drawn-->
+    <attr name="tideCount" format="integer" />
+
+    <!--Pick automatic tint color-->
+    <attr name="autoTint" format="boolean" />
+
+    <!--Maximum height for waves-->
+    <attr name="tideHeight" format="dimension" />
+
+    <attr name="alphaValue" format="integer" />
+
+    <declare-styleable name="FrissonView">
+        <attr name="scaleType" />
+        <attr name="src" />
+        <attr name="tintColor" />
+        <attr name="tideCount" />
+        <attr name="autoTint" />
+        <attr name="tideHeight" />
+        <attr name="alphaValue" />
+    </declare-styleable>
+
+</resources>

@@ -1,1 +1,1 @@
-include ':app', ':funkyheaders'
+include ':app', ':library'
