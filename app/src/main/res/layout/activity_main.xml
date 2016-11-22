@@ -15,7 +15,6 @@
         android:scaleType="centerCrop"
         frisson:tideCount="3"
         frisson:src="@drawable/intruder_shanky"
-        frisson:tintColor="#880E4F"
         frisson:tideHeight="50dp"
         frisson:alphaValue="70"
         frisson:autoTint="true"/>

@@ -238,13 +238,14 @@ public class FrissonView extends View {
             @Override
             public void onGenerated(Palette palette) {
                 paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+                int defaultColor = 0x000000;
                 if (autoTint) {
-                    if (palette.getDarkVibrantColor(DEFAULT_TINT) != 0) {
-                        paint.setColor(Color.parseColor("#" + Math.abs(palette.getDarkVibrantColor(DEFAULT_TINT))));
-                        Log.d(TAG_IMAGE, "#" + Math.abs(palette.getDarkVibrantColor(DEFAULT_TINT)));
-                    } else if (palette.getDarkMutedColor(DEFAULT_TINT) != 0) {
-                        Log.d(TAG_IMAGE, palette.getMutedColor(DEFAULT_TINT) + "");
-                        paint.setColor(Color.parseColor("#" + Math.abs(palette.getDarkMutedColor(DEFAULT_TINT))));
+                    if (palette.getDarkVibrantColor(defaultColor) != 0) {
+                        paint.setColor(Math.abs(palette.getDarkVibrantColor(defaultColor)));
+                        Log.d(TAG_IMAGE, "#" + Math.abs(palette.getDarkVibrantColor(defaultColor)));
+                    } else if (palette.getDarkMutedColor(defaultColor) != 0) {
+                        Log.d(TAG_IMAGE, palette.getMutedColor(defaultColor) + "");
+                        paint.setColor(Math.abs(palette.getDarkMutedColor(defaultColor)));
                     } else {
                         paint.setColor(DEFAULT_TINT);
                     }
