@@ -25,8 +25,6 @@ dependencies {
   compile 'com.github.IntruderShanky:Frisson:2.0.0'
  }
  ```
- 
- ![Screenshot](graphic/sample.png)
 # Implementation
 ###XML Implementation:
 ```xml
@@ -84,6 +82,8 @@ frissonView.setBitmap(bitmap);
 // to set the background color (color should have some alpha val)
 frissonView.setColorTint(Color.GREEN);
 ```
+
+![Screenshot](graphic/frisson3.png)
 #Licence
 ```
 Copyright (c) 2016 Aakash Jain
