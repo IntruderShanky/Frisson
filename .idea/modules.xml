@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FunkyHeader.iml" filepath="$PROJECT_DIR$/FunkyHeader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Frisson.iml" filepath="$PROJECT_DIR$/Frisson.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
     </modules>

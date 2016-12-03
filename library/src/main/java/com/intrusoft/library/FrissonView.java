@@ -91,7 +91,6 @@ public class FrissonView extends View {
         scaleType = ScaleType.CENTRE_CROP;
         if (attrs != null) {
             TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.FrissonView);
-
             if (array.hasValue(R.styleable.FrissonView_src))
                 imageSource = array.getResourceId(R.styleable.FrissonView_src, -1);
             if (array.hasValue(R.styleable.FrissonView_autoTint))
@@ -167,8 +166,8 @@ public class FrissonView extends View {
         viewBounds.set(0, 0, width, height);
         canvas.clipPath(path);
         canvas.drawColor(Color.WHITE);
+        paint.setAlpha(255);
         if (bitmap != null) {
-            paint.setAlpha(180);
             if (scaleType == ScaleType.CENTRE_CROP) {
                 scaleRect.set(x, y, x + requiredWidth, y + requiredHeight);
                 canvas.clipRect(scaleRect);
@@ -176,10 +175,9 @@ public class FrissonView extends View {
             } else {
                 canvas.drawBitmap(bitmap, null, viewBounds, paint);
             }
-            paint.setAlpha(alphaValue);
-            canvas.drawPath(path, paint);
         }
         paint.setAlpha(alphaValue);
+        canvas.drawPath(path, paint);
         canvas.clipRect(viewBounds, Region.Op.UNION);
         for (int i = 1; i <= tideCount; i++) {
             path = Utils.getWavePath(width, height, tideHeight, i * i * 20, 3);
@@ -201,6 +199,7 @@ public class FrissonView extends View {
      */
     public void setBitmap(@NonNull Bitmap bitmap) {
         this.bitmap = bitmap;
+        pickColorFromBitmap(bitmap);
         invalidate();
     }
 
@@ -211,6 +210,7 @@ public class FrissonView extends View {
         this.imageSource = resId;
         try {
             bitmap = BitmapFactory.decodeResource(context.getResources(), imageSource);
+            pickColorFromBitmap(bitmap);
         } catch (OutOfMemoryError error) {
             bitmap = null;
             Log.e(TAG_IMAGE, "Image is too large to process. " + error.getMessage());
@@ -224,34 +224,40 @@ public class FrissonView extends View {
      * @param color is image tint to provide theme effect. This is optional.
      */
     public void setTintColor(@ColorInt int color) {
-        this.tintColor = color;
-        if (tintColor != 0) {
-            if (Color.alpha(tintColor) == 255)
-                tintColor = Color.argb(55, Color.red(tintColor), Color.green(tintColor), Color.blue(tintColor));
+        if (color != 0) {
+            this.tintColor = color;
             paint.setColor(tintColor);
+            setAutoTint(false);
+            invalidate();
         }
-        invalidate();
     }
 
     private void pickColorFromBitmap(Bitmap bitmap) {
-        Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
-            @Override
-            public void onGenerated(Palette palette) {
-                paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-                int defaultColor = 0x000000;
-                if (autoTint) {
-                    if (palette.getDarkVibrantColor(defaultColor) != 0) {
-                        paint.setColor(Math.abs(palette.getDarkVibrantColor(defaultColor)));
-                        Log.d(TAG_IMAGE, "#" + Math.abs(palette.getDarkVibrantColor(defaultColor)));
-                    } else if (palette.getDarkMutedColor(defaultColor) != 0) {
-                        Log.d(TAG_IMAGE, palette.getMutedColor(defaultColor) + "");
-                        paint.setColor(Math.abs(palette.getDarkMutedColor(defaultColor)));
-                    } else {
-                        paint.setColor(DEFAULT_TINT);
-                    }
-                } else
-                    paint.setColor(tintColor);
-            }
-        });
+        if (bitmap != null)
+            Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
+                @Override
+                public void onGenerated(Palette palette) {
+                    paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+                    int defaultColor = 0x000000;
+                    if (autoTint) {
+                        if (palette.getDarkVibrantColor(defaultColor) != 0) {
+                            paint.setColor(Math.abs(palette.getDarkVibrantColor(defaultColor)));
+                            Log.d(TAG_IMAGE, "#" + Math.abs(palette.getDarkVibrantColor(defaultColor)));
+                        } else if (palette.getDarkMutedColor(defaultColor) != 0) {
+                            Log.d(TAG_IMAGE, palette.getMutedColor(defaultColor) + "");
+                            paint.setColor(Math.abs(palette.getDarkMutedColor(defaultColor)));
+                        } else {
+                            paint.setColor(DEFAULT_TINT);
+                        }
+                    } else
+                        paint.setColor(tintColor);
+                }
+            });
+    }
+
+    public void setAutoTint(boolean autoTint) {
+        this.autoTint = autoTint;
+        pickColorFromBitmap(bitmap);
+        invalidate();
     }
 }

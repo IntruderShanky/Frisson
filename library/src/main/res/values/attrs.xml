@@ -21,6 +21,7 @@
     <!--Maximum height for waves-->
     <attr name="tideHeight" format="dimension" />
 
+    <!--Transparency between 0 - 255 -->
     <attr name="alphaValue" format="integer" />
 
     <declare-styleable name="FrissonView">
