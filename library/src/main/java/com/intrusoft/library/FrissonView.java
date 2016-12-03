@@ -8,7 +8,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.graphics.Region;
 import android.support.annotation.ColorInt;
@@ -232,6 +231,11 @@ public class FrissonView extends View {
         }
     }
 
+    /**
+     * Pick Color from bitmap
+     *
+     * @param bitmap
+     */
     private void pickColorFromBitmap(Bitmap bitmap) {
         if (bitmap != null)
             Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
@@ -255,6 +259,11 @@ public class FrissonView extends View {
             });
     }
 
+    /**
+     * {@link FrissonView} will automatically pick tintColor from image
+     *
+     * @param autoTint
+     */
     public void setAutoTint(boolean autoTint) {
         this.autoTint = autoTint;
         pickColorFromBitmap(bitmap);
