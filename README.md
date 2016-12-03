@@ -22,7 +22,7 @@ allprojects {
 Step 2. Add the dependency
 ```groovy
 dependencies {
-  compile 'com.github.IntruderShanky:Frisson:2.0.0'
+  compile 'com.github.IntruderShanky:Frisson:2.0.1'
  }
  ```
 # Implementation
@@ -79,7 +79,7 @@ frisson:tideHeight="50dp"
 ```xml
 frisson:tideCount="true"
 ```
-![Screenshot](graphic/screenshot.png)
+![Screenshot](graphic/frisson_demo1.png)
 
 ###Java Implementation:
 ```java
@@ -95,7 +95,7 @@ frissonView.setBitmap(bitmap);
 frissonView.setColorTint(Color.GREEN);
 ```
 
-![Screenshot](graphic/frisson3.png)
+![Screenshot](graphic/frisson_demo.png)
 #Licence
 ```
 Copyright (c) 2016 Aakash Jain
