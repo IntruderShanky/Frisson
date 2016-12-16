@@ -89,7 +89,7 @@ frisson:tideHeight="50dp"
 ```
 ####Tide Count (No. of Tides)
 ```xml
-frisson:tideCount="true"
+frisson:tideCount="3"
 ```
 ####Gradient Type
 ```xml
