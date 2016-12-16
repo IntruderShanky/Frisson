@@ -24,6 +24,21 @@
     <!--Transparency between 0 - 255 -->
     <attr name="alphaValue" format="integer" />
 
+    <!-- Gradient Type-->
+    <attr name="gradientType">
+        <enum name="linear" value="0" />
+        <enum name="radial" value="1" />
+    </attr>
+
+    <!--Gradient Start Color-->
+    <attr name="gradient_startColor" format="color" />
+
+    <!--Gradient End Color-->
+    <attr name="gradient_endColor" format="color" />
+
+    <!--Gradient Angle-->
+    <attr name="gradientAngle" format="integer" />
+
     <declare-styleable name="FrissonView">
         <attr name="scaleType" />
         <attr name="src" />
@@ -32,6 +47,10 @@
         <attr name="autoTint" />
         <attr name="tideHeight" />
         <attr name="alphaValue" />
+        <attr name="gradientType" />
+        <attr name="gradientAngle"/>
+        <attr name="gradient_startColor" />
+        <attr name="gradient_endColor" />
     </declare-styleable>
 
 </resources>

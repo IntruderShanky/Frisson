@@ -10,6 +10,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
 import android.graphics.Region;
+import android.graphics.Shader;
 import android.support.annotation.ColorInt;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
@@ -19,7 +20,10 @@ import android.util.Log;
 import android.view.View;
 
 import static com.intrusoft.library.Utils.DEFAULT_ALPHA;
+import static com.intrusoft.library.Utils.DEFAULT_ANGLE;
 import static com.intrusoft.library.Utils.DEFAULT_TINT;
+import static com.intrusoft.library.Utils.END_COLOR;
+import static com.intrusoft.library.Utils.START_COLOR;
 import static com.intrusoft.library.Utils.TAG_IMAGE;
 import static com.intrusoft.library.Utils.TIDE_COUNT;
 import static com.intrusoft.library.Utils.TIDE_HEIGHT_DP;
@@ -53,6 +57,12 @@ public class FrissonView extends View {
     private int tideCount;
     private int tideHeight;
     private int alphaValue;
+    private GradientType gradientType;
+    private int gradientStartColor;
+    private int gradientEndColor;
+    private int gradientAngle;
+    private boolean showGradient;
+    private Shader gradientShader;
 
     public enum ScaleType {
         CENTRE_CROP(0),
@@ -64,7 +74,19 @@ public class FrissonView extends View {
         }
     }
 
+    public enum GradientType {
+        LINEAR(0),
+        RADIAL(1);
+        final int value;
+
+        GradientType(int value) {
+            this.value = value;
+        }
+    }
+
     private static final ScaleType[] scaleTypeArray = {ScaleType.CENTRE_CROP, ScaleType.FIT_XY};
+
+    private static final GradientType[] gradientTypeArray = {GradientType.LINEAR, GradientType.RADIAL};
 
     public FrissonView(Context context) {
         super(context);
@@ -88,6 +110,11 @@ public class FrissonView extends View {
         alphaValue = DEFAULT_ALPHA;
         tintColor = DEFAULT_TINT;
         scaleType = ScaleType.CENTRE_CROP;
+        gradientAngle = DEFAULT_ANGLE;
+        gradientStartColor = START_COLOR;
+        gradientEndColor = END_COLOR;
+        gradientType = GradientType.LINEAR;
+        showGradient = false;
         if (attrs != null) {
             TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.FrissonView);
             if (array.hasValue(R.styleable.FrissonView_src))
@@ -112,6 +139,19 @@ public class FrissonView extends View {
             }
             if (array.hasValue(R.styleable.FrissonView_scaleType))
                 scaleType = scaleTypeArray[array.getInt(R.styleable.FrissonView_scaleType, 0)];
+            if (array.hasValue(R.styleable.FrissonView_gradient_startColor)) {
+                gradientStartColor = array.getColor(R.styleable.FrissonView_gradient_startColor, START_COLOR);
+                showGradient = true;
+            }
+            if (array.hasValue(R.styleable.FrissonView_gradient_endColor)) {
+                gradientEndColor = array.getColor(R.styleable.FrissonView_gradient_endColor, END_COLOR);
+                showGradient = true;
+            }
+            if (array.hasValue(R.styleable.FrissonView_gradientType))
+                gradientType = gradientTypeArray[array.getInt(R.styleable.FrissonView_gradientType, 0)];
+            if (array.hasValue(R.styleable.FrissonView_gradientAngle))
+                if (Math.abs(array.getInt(R.styleable.FrissonView_gradientAngle, DEFAULT_ANGLE)) <= 360)
+                    gradientAngle = Math.abs(array.getInt(R.styleable.FrissonView_gradientAngle, DEFAULT_ANGLE));
             array.recycle();
         }
         tideHeight /= 2;
@@ -155,6 +195,12 @@ public class FrissonView extends View {
             if (x > 0) x = -x;
             if (y > 0) y = -y;
         }
+        if (showGradient)
+            if (gradientType == GradientType.LINEAR)
+                gradientShader = GradientGenerator.getLinearGradient(gradientAngle, width, height, gradientStartColor, gradientEndColor);
+            else
+                gradientShader = GradientGenerator.getRadialGradient(width, height, gradientStartColor, gradientEndColor);
+
     }
 
     @Override
@@ -181,6 +227,12 @@ public class FrissonView extends View {
         for (int i = 1; i <= tideCount; i++) {
             path = Utils.getWavePath(width, height, tideHeight, i * i * 20, 3);
             canvas.drawPath(path, paint);
+        }
+        if (showGradient) {
+            Paint p = new Paint();
+            p.setShader(gradientShader);
+            path = Utils.getWavePath(width, height, tideHeight, l * 20, 4);
+            canvas.drawPath(path, p);
         }
     }
 
@@ -269,4 +321,29 @@ public class FrissonView extends View {
         pickColorFromBitmap(bitmap);
         invalidate();
     }
+
+    /**
+     * Draw {@link android.graphics.LinearGradient} on top of the image with gradientAngle
+     *
+     * @param gradientAngle
+     * @param gradientStartColor
+     * @param gradientEndColor
+     */
+    public void setLinearGradient(int gradientAngle, int gradientStartColor, int gradientEndColor) {
+        showGradient = true;
+        gradientShader = GradientGenerator.getLinearGradient(gradientAngle, width, height, gradientStartColor, gradientEndColor);
+        invalidate();
+    }
+
+    /**
+     * Draw {@link android.graphics.RadialGradient} on top of the image
+     * @param gradientStartColor
+     * @param gradientEndColor
+     */
+    public void setRadialGradient(int gradientStartColor, int gradientEndColor) {
+        showGradient = true;
+        gradientShader = GradientGenerator.getRadialGradient(width, height, gradientStartColor, gradientEndColor);
+        invalidate();
+    }
+
 }

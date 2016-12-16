@@ -14,6 +14,9 @@ class Utils {
     final static String TAG_IMAGE = "FrissonView";
     final static int TIDE_COUNT = 3;
     final static int TIDE_HEIGHT_DP = 30;
+    final static int DEFAULT_ANGLE = 90;
+    final static int START_COLOR = Color.BLACK;
+    final static int END_COLOR = Color.WHITE;
 
     static int getPixelForDp(Context context, int displayPixels) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, displayPixels, context.getResources().getDisplayMetrics());

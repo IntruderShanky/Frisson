@@ -9,16 +9,18 @@
         android:id="@+id/wave_head"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="130dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        app:alphaValue="80"
-        app:autoTint="true"
-        app:src="@drawable/taylor"
+        android:layout_marginBottom="60dp"
+        app:alphaValue="50"
+        app:tintColor="#000000"
+        app:gradientType="radial"
+        app:gradient_endColor="#cc000000"
+        app:gradient_startColor="#00000000"
+        app:src="@drawable/barney"
         app:tideCount="3"
-        app:tideHeight="40dp"
-        app:tintColor="#000000" />
+        app:tideHeight="40dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,16 +34,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-smallcaps"
-            android:text="TAYLOR SWIFT"
+            android:text="NEIL PATTRIC HARRIS"
             android:textColor="#fff"
-            android:textSize="44sp"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-smallcaps"
-            android:text="SINGER"
+            android:text="ACTOR"
             android:textColor="#ffffff"
             android:textSize="20sp" />
     </LinearLayout>
@@ -50,16 +52,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:padding="10dp"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="50dp"
-        android:orientation="horizontal">
+        android:visibility="gone"
+        android:orientation="horizontal"
+        android:padding="10dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:background="#212121"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <ImageView
