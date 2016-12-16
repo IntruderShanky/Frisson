@@ -9,6 +9,13 @@ Provide Funky cuts on image (The Perfect Header for Profile UI)
 
 ![Screenshot](graphic/frisson.png)
 
+#Overview
+**Frisson** provide following features:
+
+* **Funky Cuts**: Provide Funky cuts on the bottom of the view. 
+* **Customizable**: custom settings of cuts
+* **Gradient** : Add gradient on the view.
+
 # Usage
 Step 1. Add the JitPack repository to your build file
 ```groovy
@@ -22,20 +29,24 @@ allprojects {
 Step 2. Add the dependency
 ```groovy
 dependencies {
-  compile 'com.github.IntruderShanky:Frisson:2.0.1'
+  compile 'com.github.IntruderShanky:Frisson:2.1.1'
  }
  ```
 # Implementation
 ###XML Implementation:
 ```xml
- <com.intrusoft.library.FrissonView
-        android:id="@+id/frisson_view"
+  <com.intrusoft.library.FrissonView
+        android:id="@+id/wave_head"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
-        frisson:alphaValue="190"
-        frisson:autoTint="true"
-        frisson:tideHeight="50dp"
-        frisson:tintColor="#01579B" />
+        android:layout_height="400dp"
+        frisson:alphaValue="50"
+        frisson:tintColor="#000000"
+        frisson:gradientType="radial"
+        frisson:gradient_endColor="#cc000000"
+        frisson:gradient_startColor="#00000000"
+        frisson:src="@drawable/your_photo"
+        frisson:tideCount="3"
+        frisson:tideHeight="40dp" />
 ```
 ##Implementation with **[Glide]**
 ```java
@@ -49,6 +60,7 @@ Glide.with(context)
                     }
                 });
 ```
+
 ###Attributes
 ####Image ScaleType
 ```xml
