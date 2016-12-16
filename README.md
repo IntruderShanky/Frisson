@@ -60,7 +60,7 @@ Glide.with(context)
                     }
                 });
 ```
-
+![Screenshot](graphic/frisson_barney.png)
 ###Attributes
 ####Image ScaleType
 ```xml
@@ -90,6 +90,22 @@ frisson:tideHeight="50dp"
 ####Tide Count (No. of Tides)
 ```xml
 frisson:tideCount="true"
+```
+####Gradient Type
+```xml
+frisson:gradientType="linear"
+frisson:gradientType="radial"
+```
+
+####Gradient Color
+```xml
+frisson:gradient_endColor="#cc000000"
+frisson:gradient_startColor="#00000000"
+```
+
+####Gradient Angle (Works with Linear type Gradient)
+```xml
+frisson:gradientAngle="180"
 ```
 ![Screenshot](graphic/frisson_demo1.png)
 
