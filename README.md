@@ -33,7 +33,7 @@ dependencies {
  }
  ```
 # Implementation
-###XML Implementation:
+### XML Implementation:
 ```xml
   <com.intrusoft.library.FrissonView
         android:id="@+id/wave_head"
