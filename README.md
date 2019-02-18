@@ -9,7 +9,7 @@ Provide Funky cuts on image (The Perfect Header for Profile UI)
 
 ![Screenshot](graphic/frisson.png)
 
-#Overview
+# Overview
 **Frisson** provide following features:
 
 * **Funky Cuts**: Provide Funky cuts on the bottom of the view. 
@@ -48,7 +48,7 @@ dependencies {
         frisson:tideCount="3"
         frisson:tideHeight="40dp" />
 ```
-##Implementation with **[Glide]**
+## Implementation with **[Glide]**
 ```java
 Glide.with(context)
                 .load(URL)
@@ -61,55 +61,55 @@ Glide.with(context)
                 });
 ```
 ![Screenshot](graphic/frisson_barney.png)
-###Attributes
-####Image ScaleType
+### Attributes
+#### Image ScaleType
 ```xml
 frisson:scaleType="centerCrop"
 frisson:scaleType="fitXY"
 ```
-####Image Drawable Resource
+#### Image Drawable Resource
 ```xml
 frisson:src="@drawable/your_image"
 ```
-####Background Tint Color
+#### Background Tint Color
 ```xml
 frisson:tintColor="@color/your_color"
 ```
-####Alpha Value (Ranges from 0 to 255) Default Value: 50
+#### Alpha Value (Ranges from 0 to 255) Default Value: 50
 ```xml
 frisson:alphaValue="value"
 ```
-####Auto Tint (Pick automatically tint color from image)
+#### Auto Tint (Pick automatically tint color from image)
 ```xml
 frisson:autoTint="true"
 ```
-####Tide Height (Height of waves)
+#### Tide Height (Height of waves)
 ```xml
 frisson:tideHeight="50dp"
 ```
-####Tide Count (No. of Tides)
+#### Tide Count (No. of Tides)
 ```xml
 frisson:tideCount="3"
 ```
-####Gradient Type
+#### Gradient Type
 ```xml
 frisson:gradientType="linear"
 frisson:gradientType="radial"
 ```
 
-####Gradient Color
+#### Gradient Color
 ```xml
 frisson:gradient_endColor="#cc000000"
 frisson:gradient_startColor="#00000000"
 ```
 
-####Gradient Angle (Works with Linear type Gradient)
+#### Gradient Angle (Works with Linear type Gradient)
 ```xml
 frisson:gradientAngle="180"
 ```
 ![Screenshot](graphic/frisson_demo1.png)
 
-###Java Implementation:
+### Java Implementation:
 ```java
 FrissonView frissonView = (FrissonView) findViewById(R.id.frisson_view);
 
@@ -124,7 +124,7 @@ frissonView.setColorTint(Color.GREEN);
 ```
 
 ![Screenshot](graphic/frisson_demo.png)
-#Licence
+# Licence
 ```
 Copyright (c) 2016 Aakash Jain
 
